@@ -60,7 +60,18 @@ Qus 2 : Do the below programs in arrow functions
 
 	e.Return all the palindromes in an array
 
-	
+	var getPalindromes = (array) =>
+	  array.filter((str) => {
+	    var reversedStr = str.split('').reverse().join('');
+	    return str === reversedStr;
+	  });
+
+	var words = ["level", "hello", "racecar", "world", "madam"];
+	var palindromes = getPalindromes(words);
+	console.log(palindromes);
+
+output : [ 'level', 'racecar', 'madam' ]
+
 
 
 	
