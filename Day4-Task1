@@ -107,10 +107,41 @@ Qus 1 : Do the below programs in anonymous function & IIFE
 	output : [ 23, 89, 43 ]
 
 	e.Return all the palindromes in an array
+
+	function getPalindromes(array) {
+	  return array.filter((str) => {
+	    const reversedStr = str.split('').reverse().join('');
+ 	   return str === reversedStr;
+	  });
+	}
+	const words = ["level", "hello", "racecar", "world", "madam"];
+	const palindromes = getPalindromes(words);
+	console.log(palindromes);
+
+	output : [ 'level', 'racecar', 'madam' ]
+	
 	
 	
 
 	f.Return median of two sorted arrays of the same size.
+
+	function findMedianSortedArrays(nums1, nums2) {
+  var mergedArray = [...nums1, ...nums2].sort((a, b) => a - b);
+  var length = mergedArray.length;
+  var mid = Math.floor(length / 2);
+
+  if (length % 2 === 0) {
+    return (mergedArray[mid - 1] + mergedArray[mid]) / 2;
+  } else {
+    return mergedArray[mid];
+  }
+}
+var nums1 = [1, 2, 5];
+var nums2 = [2, 4, 6];
+var median = findMedianSortedArrays(nums1, nums2);
+console.log(median);
+
+output : 3
 
 	
 	g.Remove duplicates from an array
@@ -133,6 +164,18 @@ Qus 1 : Do the below programs in anonymous function & IIFE
 	output = [ 'vicky', 'sandy', 'gokul', 1, 2, 3, 4, 5 ]
 
 	h.Rotate an array by k times
+
+	function rotateArray(arr, k) {
+  const rotations = k % arr.length; 
+  const rotated = arr.slice(rotations).concat(arr.slice(0, rotations));
+  return rotated;
+}
+var array = [1, 2, 3, 4, 5];
+var k = 2;
+var rotatedArray = rotateArray(array, k);
+console.log(rotatedArray);
+
+output : [ 3, 4, 5, 1, 2 ]
 	
 	
 
